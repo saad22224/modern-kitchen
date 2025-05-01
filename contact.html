@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" lang="ar" dir="rtl" content="width=device-width, initial-scale=1.0">
+  <title>Recrute - Staffing Agency</title>
+
+  <!--=====FAB ICON=======-->
+  <link rel="shortcut icon" href="assets/img/logo/titel1.png" type="image/x-icon">
+
+
+  <!--=====CSS=======-->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/nice-select.css">
+  <link rel="stylesheet" href="assets/css/slick-slider.css">
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/aos.css">
+  <link rel="stylesheet" href="assets/css/mobile-menu.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+
+  <!--=====JQUERY=======-->
+  <script src="assets/js/jquery-3-6-0.min.js"></script>
+</head>
+
+<style>
+:root {
+    --primary-color: #FF7A01;
+    /* The specified orange color */
+    --secondary-color: #333;
+    --light-color: #f9f9f9;
+    --dark-overlay: rgba(0, 0, 0, 0.7);
+    --transition: all 0.3s ease;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Cairo', sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-color);
+    color: var(--secondary-color);
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+
+  /* Header Styles */
+  /* header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+  } */
+
+  header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+  }
+
+  header .slogan {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  /* Works Section Styles */
+  .works-section {
+    padding: 80px 0;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Swiper Gallery */
+  .swiper {
+    width: 100%;
+    max-width: 900px;
+    height: 400px;
+    margin: 0 auto 60px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Navigation buttons */
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: #ddd;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #FF7A01;
+  }
+
+  /* Call to Action */
+  .call-to-action {
+    background-color: var(--secondary-color);
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    margin-top: 30px;
+  }
+
+  .call-to-action h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white !important;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: var(--transition);
+  }
+
+  .cta-button:hover {
+    background-color: #e56e00;
+    transform: translateY(-2px);
+  }
+
+  /* Footer */
+  footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2.2rem;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+    }
+
+    .works-section {
+      padding: 50px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    header {
+      padding: 40px 0;
+    }
+
+    .call-to-action {
+      padding: 30px 20px;
+    }
+  }
+
+
+</style>
+
+<body class="body" dir="rtl">
+
+  <!-- Preloader Start -->
+  <div class="preloader">
+    <div class="loading-container">
+      <div class="loading"></div>
+      <div id="loading-icon"><img src="assets\img\icons\صورة واتساب بتاريخ 1446-11-03 في 13.37.07_c7222472.jpg" alt=""></div>
+    </div>
+  </div>
+  <!-- Preloader End -->
+
+
+  <!--=====progress END=======-->
+
+  <div class="paginacontainer">
+
+    <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+
+  </div>
+
+  <!--=====progress END=======-->
+
+  <!--=====HEADER START=======-->
+  <header>
+    <div class="header-area header-area1 header-area-all d-none d-lg-block" id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="header-elements">
+              <div class="site-logo">
+                <a href="index.html">
+                  <img style=" max-width: 100%; width: 150px;" src="assets\img\icons\صورة واتساب بتاريخ 1446-11-03 في 13.37.07_c7222472.jpg" alt="">
+                </a>
+              </div>
+
+
+              <div class="main-menu-ex main-menu-ex1">
+                <ul id="list-example">
+                  <li><a class="list-group-item list-group-item-action" href="index.html">الصفحة الرئيسية</a></li>
+                  <li><a class="list-group-item list-group-item-action" href="about.html">من نحن</a></li>
+                  <li><a class="list-group-item list-group-item-action" href="project.html">أعمالنا</a></li>
+                  <li><a class="list-group-item list-group-item-action" href="contact.html">تواصل معنا</a></li>
+                </ul>
+              </div>
+              
+
+
+
+              <div class="header2-buttons">
+                <div class="button">
+                  <a class="theme-btn1" href="contact.html"> تواصل معنا  <span><i
+                        class="fa-solid fa-arrow-right"></i></span></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--=====HEADER END=======-->
+
+  <!--=====Mobile header start=======-->
+  <div class="mobile-header mobile-header-main d-block d-lg-none ">
+    <div class="container-fluid">
+      <div class="col-12">
+        <div class="mobile-header-elements">
+          <div class="mobile-logo">
+            <a href="index1.html"><img src="assets\img\icons\صورة واتساب بتاريخ 1446-11-03 في 13.37.07_c7222472.jpg" 
+              style="max-width: 100%; width: 100px;" alt=""></a>
+          </div>
+          <div class="mobile-nav-icon">
+            <i class="fa-duotone fa-bars-staggered"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-sidebar d-block d-lg-none">
+    <div class="logo-m">
+      <a href="index.html"><img src="assets\img\icons\صورة واتساب بتاريخ 1446-11-03 في 13.37.07_c7222472.jpg"
+        style="max-width: 100%; width: 100px; transform: translateX(-100%);" alt=""></a>
+    </div>
+    <div class="menu-close">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+    <div class="mobile-nav">
+      <ul>
+        <li><a href="index.html">الصفحة الرئيسية</a></li>
+        <li><a href="about.html">عنا</a></li>
+        <li><a href="service.html">أعمالنا</a></li>
+        <li><a href="contact.html">تواصل معنا</a></li>
+      </ul>
+  
+      <div class="mobile-button">
+        <a class="theme-btn1" href="service.html">اعرف المزيد <span><i class="fa-solid fa-arrow-right"></i></span></a>
+      </div>
+  
+      <div class="single-footer-items">
+        <h3>تواصل معنا</h3>
+  
+        <div class="contact-box">
+          <div class="icon">
+            <img src="assets/img/icons/footer-icon1.png" alt="">
+          </div>
+          <div class="pera">
+            <a href="tel:0543316001">0543316001</a>
+          </div>
+        </div>
+  
+        <div class="contact-box">
+          <div class="icon">
+            <img src="assets/img/icons/footer-icon2.png" alt="">
+          </div>
+          <div class="pera">
+            <a href="mailto:modernhouse84@gmail.com">modernhouse84@gmail.com</a>
+          </div>
+        </div>
+  
+        <div class="contact-box">
+          <div class="icon">
+            <img src="assets/img/icons/footer-icon3.png" alt="">
+          </div>
+          <div class="pera">
+            المدينة المنورة – شوران – حي السد<br> بجوار أسواق القرية
+          </div>
+        </div>
+      </div>
+  
+      <div class="contact-infos">
+        <h3>تابعنا</h3>
+        <ul class="social-icon">
+          <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+
+  <!--=====Mobile header end=======-->
+
+
+  <!--=====HERO AREA START =======-->
+<!--===== SECTION: من نحن =====-->
+<section class="about-us  works-section" data-aos="zoom-in-left" data-aos-duration="900" style="margin-top: 150px;">
+    <div class="container">
+      <div class="section-header">
+        <h2>من نحن</h2>
+        <p>نحن "البيت العصري للمطابخ"، متخصصون في تصميم وتنفيذ المطابخ العصرية المخصصة لتلبية كافة الأذواق والاحتياجات. ندمج بين الابتكار، والجودة، والفخامة، لتوفير تجربة تصميم استثنائية ومريحة لعملائنا.</p>
+      </div>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="مطبخ عصري 1"></div>
+          <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="مطبخ عصري 2"></div>
+          <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="مطبخ عصري 3"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+  
+<!--===== قسم قيمنا START=======-->
+<div class="mission sp">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 m-auto text-center">
+        <div class="heading1" data-aos="fade-down" data-aos-duration="600">
+          <span class="span">قيمنا</span>
+          <h2>نرتكز على مبادئ تميزنا</h2>
+          <div class="space16"></div>
+          <p>نؤمن بأن كل مطبخ هو قلب المنزل، لذا نقدم حلولًا مبتكرة بجودة عالية وخدمة تنبع من قيمنا الأساسية.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="space30"></div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="mission-box" data-aos="fade-right" data-aos-duration="800">
+          <div class="icon">
+            <img src="assets/img/icons/mission-icon1.png" alt="أيقونة الابتكار">
+          </div>
+          <div class="heading1">
+            <h5><a href="#">الابتكار</a></h5>
+            <div class="space16"></div>
+            <p>نبتكر في التصاميم ونتبع أحدث الاتجاهات لنقدم مطابخ عصرية تلائم ذوق كل عميل.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="mission-box" data-aos="fade-right" data-aos-duration="1000">
+          <div class="icon">
+            <img src="assets/img/icons/mission-icon2.png" alt="أيقونة الجودة">
+          </div>
+          <div class="heading1">
+            <h5><a href="#">الجودة</a></h5>
+            <div class="space16"></div>
+            <p>نستخدم أجود المواد ونتبع أعلى معايير التصنيع لضمان مطبخ يدوم طويلاً.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="mission-box" data-aos="fade-right" data-aos-duration="1200">
+          <div class="icon">
+            <img src="assets/img/icons/mission-icon1.png" alt="أيقونة الرضا">
+          </div>
+          <div class="heading1">
+            <h5><a href="#">رضا العملاء</a></h5>
+            <div class="space16"></div>
+            <p>نسعى لتجاوز توقعات عملائنا عبر الاهتمام بالتفاصيل وتقديم خدمة مميزة.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--===== قسم قيمنا END=======-->
+
+  
+<!--===== قسم ميزاتنا START=======-->
+<div class="mission sp" style="background-color: rgba(255, 255, 255, 0.185) !important;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 m-auto text-center">
+        <div class="heading1" data-aos="fade-up" data-aos-duration="600">
+          <span class="span">ميزاتنا</span>
+          <h2>لماذا نحن خيارك الأفضل؟</h2>
+          <div class="space16"></div>
+          <p>نتميز بخدمات متكاملة تجعل تجربة تصميم مطبخك سلسة، راقية وممتعة من البداية حتى التسليم.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="space30"></div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6">
+        <div class="mission-box" data-aos="fade-left" data-aos-duration="800">
+          <div class="icon">
+            <i class="fas fa-tachometer-alt fa-3x text-primary"></i>
+          </div>
+          <div class="heading1">
+            <h5><a href="#">السرعة في التنفيذ</a></h5>
+            <div class="space16"></div>
+            <p>نلتزم بالجداول الزمنية المحددة وننفذ المشاريع بأعلى كفاءة في أقل وقت ممكن.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="mission-box" data-aos="fade-left" data-aos-duration="1000">
+          <div class="icon">
+            <i class="fas fa-shield-alt fa-3x text-success"></i>
+          </div>
+          <div class="heading1">
+            <h5><a href="#">ضمان ممتد</a></h5>
+            <div class="space16"></div>
+            <p>نمنحك ضمانًا حقيقياً يغطي المواد والتصنيع لضمان راحة بالك بعد التركيب.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="mission-box" data-aos="fade-left" data-aos-duration="1200">
+          <div class="icon">
+            <i class="fas fa-headset fa-3x text-danger"></i>
+          </div>
+          <div class="heading1">
+            <h5><a href="#">خدمة ما بعد البيع</a></h5>
+            <div class="space16"></div>
+            <p>فريقنا مستعد دائمًا لخدمتك حتى بعد الانتهاء من المشروع لضمان رضاك التام.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!--===== قسم ميزاتنا END=======-->
+
+
+  
+
+  <!--=====HERO AREA END=======-->
+
+  <!--=====HERO SLIDER AREA END=======-->
+
+  <div class="hero1-slider">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="logo-slider">
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo1.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo2.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo3.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo4.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo5.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo6.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo7.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo1.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo2.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo3.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo4.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo5.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo6.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo7.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--=====HERO SLIDER AREA END=======-->
+
+  <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+
+  
+
+
+
+
+
+
+
+
+<style>
+  @media (max-width: 767px) {
+  .footer1 .single-footer-items  {
+    text-align: center;
+  }
+ .middle  {
+    text-align: center;
+  }
+
+  .footer1 .social-icon {
+    justify-content: center;
+  }
+
+  .footer1 .footer-logo a,
+  .footer1 .contact-box {
+    display: inline-block;
+  }
+
+  .footer1 .menu-list {
+    padding: 0;
+  }
+
+
+  .middle{
+   text-align: center !important; display: 
+          flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;
+  }
+}
+
+</style>
+    <div class="footer1 _relative" dir="rtl">
+      <div class="container">
+        <div class="row">
+          <!-- الشعار والوصف -->
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="single-footer-items footer-logo-area">
+              <div class="footer-logo">
+                <a href="#"><img style="max-width: 100%; width: 150px;" src="assets\img\icons\صورة واتساب بتاريخ 1446-11-03 في 13.37.07_c7222472.jpg" alt="شعار الموقع"></a>
+              </div>
+              <div class="space20"></div>
+              <div class="heading1-w">
+                <p>هدفنا هو تبسيط عملية التصميم وتوفير مطابخ عصرية بجودة عالية تناسب جميع الأذواق.</p>
+              </div>
+              <ul class="social-icon">
+                <ul class="social-icon">
+                  <li><a href="http://wa.me/966543316001"  target="_blank" ><i class="fa-brands fa-whatsapp"></i></a></li>
+                  <li><a href="#" target="_blank" ><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li><a  target="_blank" href="https://www.tiktok.com/@moden.kitchen.house?_t=ZS-8vy93LVcElN&_r=1"><i class="fa-brands fa-tiktok"></i></a></li>
+                  <li><a target="_blank"  href="https://www.instagram.com/moden_kitchen_house/?igsh=NThvaHU2dWZpeWQ%3D&utm_source=qr#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+                
+              </ul>
+            </div>
+          </div>
+    
+          <!-- روابط التصفح -->
+          <div class="col-lg col-md-6 col-12">
+            <div class="single-footer-items">
+              <h3>روابط مهمة</h3>
+              <ul class="menu-list">
+                <li><a href="index.html">الصفحة الرئيسية</a></li>
+                <li><a href="about.html">عنا</a></li>
+                <li><a href="works.html">أعمالنا</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
+              </ul>
+            </div>
+          </div>
+    
+          <!-- معلومات التواصل -->
+          <div class="col-lg-3  col-md-6 col-12 middle">
+            <div class="single-footer-items middle" >
+              <h3>تواصل معنا</h3>
+            
+              <div class="contact-box " >
+                <div class="icon">
+                  <img src="assets/img/icons/footer-icon1.png" alt="">
+                </div>
+                <div class="pera">
+                  <a href="tel:0543316001">0543316001</a>
+                </div>
+              </div>
+            
+              <div class="contact-box">
+                <div class="icon">
+                  <img src="assets/img/icons/footer-icon2.png" alt="">
+                </div>
+                <div class="pera">
+                  <a href="mailto:modernhouse84@gmail.com">modernhouse84@gmail.com</a>
+                </div>
+              </div>
+            
+              <div class="contact-box">
+                <div class="icon">
+                  <img src="assets/img/icons/footer-icon3.png" alt="">
+                </div>
+                <div class="pera">
+                  <p style="color: white; display: flex;">
+                    المدينة المنورة<br>
+                    شوران – حي السد<br>
+                    بجوار أسواق القرية
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+    
+        </div>
+    
+        <div class="space70"></div>
+      </div>
+    
+      <div class="copyright-area _relative">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-12">
+              <div class="coppyright">
+                <p>© جميع الحقوق محفوظة 2024 - البيت العصري للمطابخ</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!--===== FOOTER AREA END =======-->
+
+
+
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/fontawesome.js"></script>
+    <script src="assets/js/mobile-menu.js"></script>
+    <script src="assets/js/jquery.magnific-popup.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/slick-slider.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="assets/js/jquery.countup.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/Splitetext.js"></script>
+    <script src="assets/js/SmoothScroll.js"></script>
+    <script src="assets/js/text-animation.js"></script>
+    <script src="assets/js/jquery.lineProgressbar.js"></script>
+    <script src="assets/js/tilt.jquery.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+ /**
+ * مكتبة سويبر لعرض صور المطابخ 
+ * Swiper.js wrapper for kitchen gallery
+ */
+
+// تهيئة السويبر عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', function() {
+  // إنشاء سويبر جديد
+  const swiper = new Swiper('.mySwiper', {
+    // الإعدادات الأساسية
+    direction: 'horizontal',
+    loop: true,
+    grabCursor: true,
+    speed: 800,
+    slidesPerView: 1,
+    
+    // التشغيل التلقائي
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true
+    },
+    
+    // أزرار التنقل (معطلة حسب طلب المستخدم للتصميم المطلوب)
+    /*
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    */
+    
+    // النقاط السفلية
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    
+    // الأحداث
+    on: {
+      init: function() {
+        console.log('تم تهيئة سويبر المطابخ بنجاح');
+      }
+    }
+  });
+  
+  // تعيين ألوان مخصصة
+  document.documentElement.style.setProperty('--swiper-theme-color', '#FF7A01');
+});
+
+    </script>
+    
+</body>
+
+</html>
