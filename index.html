@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" lang="ar" dir="rtl" content="width=device-width, initial-scale=1.0">
-  <title>Recrute - Staffing Agency</title>
+  <title>البيت العصري للمطابخ</title>
 
   <!--=====FAB ICON=======-->
   <link rel="shortcut icon" href="assets\img\icons\صورة واتساب بتاريخ 1446-11-03 في 13.37.07_c7222472.jpg" type="image/x-icon">
@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
-
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
   <!--=====JQUERY=======-->
   <script src="assets/js/jquery-3-6-0.min.js"></script>
 </head>
@@ -545,7 +545,10 @@
           </div>
           <div class="col-lg-5">
             <div class="image reveal overlay-anim">
-              <img src="assets/img/others/choose1-img.png" alt="">
+              <video id="player" playsinline controls data-poster="/path/to/poster.jpg">
+                <source src="assets\video\فيديو واتساب بتاريخ 1446-11-03 في 22.00.33_5b901a57.mp4" type="video/mp4" />
+              
+              </video>
             </div>
           </div>
           <div class="col-lg-5">
@@ -928,6 +931,8 @@
     <script src="assets/js/tilt.jquery.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+
     <script>
  /**
  * مكتبة سويبر لعرض صور المطابخ 
@@ -977,6 +982,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // تعيين ألوان مخصصة
   document.documentElement.style.setProperty('--swiper-theme-color', '#FF7A01');
 });
+
+
+
+  const player = new Plyr('#player');
+
 
     </script>
     
