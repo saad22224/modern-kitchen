@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" lang="ar" dir="rtl" content="width=device-width, initial-scale=1.0">
+  <title>Recrute - Staffing Agency</title>
+
+  <!--=====FAB ICON=======-->
+  <link rel="shortcut icon" href="assets/img/logo/titel1.png" type="image/x-icon">
+
+
+  <!--=====CSS=======-->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="assets/css/nice-select.css">
+  <link rel="stylesheet" href="assets/css/slick-slider.css">
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/aos.css">
+  <link rel="stylesheet" href="assets/css/mobile-menu.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+
+  <!--=====JQUERY=======-->
+  <script src="assets/js/jquery-3-6-0.min.js"></script>
+</head>
+
+<style>
+:root {
+    --primary-color: #FF7A01;
+    /* The specified orange color */
+    --secondary-color: #333;
+    --light-color: #f9f9f9;
+    --dark-overlay: rgba(0, 0, 0, 0.7);
+    --transition: all 0.3s ease;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Cairo', sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-color);
+    color: var(--secondary-color);
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+
+  /* Header Styles */
+  /* header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+  } */
+
+  header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+  }
+
+  header .slogan {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  /* Works Section Styles */
+  .works-section {
+    padding: 80px 0;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Swiper Gallery */
+  .swiper {
+    width: 100%;
+    max-width: 900px;
+    height: 400px;
+    margin: 0 auto 60px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Navigation buttons */
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: #ddd;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #FF7A01;
+  }
+
+  /* Call to Action */
+  .call-to-action {
+    background-color: var(--secondary-color);
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    color: white;
+    margin-top: 30px;
+  }
+
+  .call-to-action h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white !important;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: var(--transition);
+  }
+
+  .cta-button:hover {
+    background-color: #e56e00;
+    transform: translateY(-2px);
+  }
+
+  /* Footer */
+  footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2.2rem;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+    }
+
+    .works-section {
+      padding: 50px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    header {
+      padding: 40px 0;
+    }
+
+    .call-to-action {
+      padding: 30px 20px;
+    }
+  }
+
+
+</style>
+
+<body class="body" dir="rtl">
+
+
+  <!-- Preloader Start -->
+  <div class="preloader">
+    <div class="loading-container">
+      <div class="loading"></div>
+      <div id="loading-icon"><img src="assets/img/logo/titel1.png" alt=""></div>
+    </div>
+  </div>
+  <!-- Preloader End -->
+
+
+  <!--=====progress END=======-->
+
+  <div class="paginacontainer">
+
+    <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+
+  </div>
+
+  <!--=====progress END=======-->
+
+  <!--=====HEADER START=======-->
+  <header>
+    <div class="header-area header-area1 header-area-all d-none d-lg-block" id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="header-elements">
+              <div class="site-logo">
+                <a href="index.html">
+                  <img src="assets/img/logo/header-logo1.png" alt="">
+                </a>
+              </div>
+
+
+              <div class="main-menu-ex main-menu-ex1">
+                <ul id="list-example">
+                  <li><a class="list-group-item list-group-item-action" href="#choose">Choose</a></li>
+                  <li><a class="list-group-item list-group-item-action" href="#service">Service</a></li>
+                  <li><a class="list-group-item list-group-item-action" href="#project">Project</a></li>
+                  <li><a class="list-group-item list-group-item-action" href="#work">Works</a></li>
+                  <li><a class="list-group-item list-group-item-action" href="#contact">Contact</a></li>
+                  <li><a class="list-group-item list-group-item-action" href="#blog">Blog</a></li>
+                </ul>
+              </div>
+
+
+
+              <div class="header2-buttons">
+                <div class="button">
+                  <a class="theme-btn1" href="contact.html">Get A Quote <span><i
+                        class="fa-solid fa-arrow-right"></i></span></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--=====HEADER END=======-->
+
+  <!--=====Mobile header start=======-->
+  <div class="mobile-header mobile-header-main d-block d-lg-none ">
+    <div class="container-fluid">
+      <div class="col-12">
+        <div class="mobile-header-elements">
+          <div class="mobile-logo">
+            <a href="index1.html"><img src="assets/img/logo/header-logo1.png" alt=""></a>
+          </div>
+          <div class="mobile-nav-icon">
+            <i class="fa-duotone fa-bars-staggered"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-sidebar d-block d-lg-none">
+    <div class="logo-m">
+      <a href="index.html"><img src="assets/img/logo/header-logo1.png" alt=""></a>
+    </div>
+    <div class="menu-close">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+    <div class="mobile-nav">
+
+      <ul>
+        <li class="has-dropdown"><a href="#">Home </a>
+          <ul class="sub-menu">
+            <li class="has-dropdown has-dropdown1"><a href="#">Multipage</a>
+              <ul class="sub-menu">
+                <li><a href="index.html">Home 1</a></li>
+                <li><a href="index2.html">Home 2</a></li>
+                <li><a href="index3.html">Home 3</a></li>
+                <li><a href="index4.html">Home 4</a></li>
+                <li><a href="index5.html">Home 5</a></li>
+                <li><a href="index6.html">Home 6</a></li>
+                <li><a href="index7.html">Home 7</a></li>
+                <li><a href="index8.html">Home 8</a></li>
+                <li><a href="index9.html">Home 9</a></li>
+                <li><a href="index10.html">Home 10</a></li>
+              </ul>
+            </li>
+            <li class="has-dropdown has-dropdown1"><a href="#">Landing Page</a>
+              <ul class="sub-menu">
+                <li><a href="single-index1.html">Home 1</a></li>
+                <li><a href="single-index2.html">Home 2</a></li>
+                <li><a href="single-index3.html">Home 3</a></li>
+                <li><a href="single-index4.html">Home 4 </a></li>
+                <li><a href="single-index5.html">Home 5</a></li>
+                <li><a href="single-index6.html">Home 6</a></li>
+                <li><a href="single-index7.html">Home 7</a></li>
+                <li><a href="single-index8.html">Home 8</a></li>
+                <li><a href="single-index9.html">Home 9</a></li>
+                <li><a href="single-index10.html">Home 10</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+        <li class="has-dropdown"><a href="#">Service</a>
+          <ul class="sub-menu">
+            <li><a href="service.html">Service</a></li>
+            <li><a href="service-details-left.html">Service Left</a></li>
+            <li><a href="service-details-right.html">Service Right</a></li>
+            <li><a href="service-details.html">Service Details</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown"><a href="#">Pages</a>
+          <ul class="sub-menu">
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="job-post.html">Job Post</a></li>
+            <li><a href="job-details.html">Job Details</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="testimonial.html">Testimonial</a></li>
+            <li><a href="error.html">404</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown"><a href="#">Blog</a>
+          <ul class="sub-menu">
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="blog-details-left.html">Details Left</a></li>
+            <li><a href="blog-details-right.html">Details Right</a></li>
+            <li><a href="blog-details.html">Blog Details</a></li>
+          </ul>
+        </li>
+
+        <li class="has-dropdown"><a href="#">Project</a>
+          <ul class="sub-menu">
+            <li><a href="project.html">Project</a></li>
+            <li><a href="project-details-left.html">Project Left</a></li>
+            <li><a href="project-details-right.html">Project Right</a></li>
+            <li><a href="project-details.html">Project Details</a></li>
+          </ul>
+        </li>
+
+      </ul>
+
+      <div class="mobile-button">
+        <a class="theme-btn1" href="service.html">Learn More <span><i class="fa-solid fa-arrow-right"></i></span></a>
+      </div>
+
+      <div class="single-footer-items">
+        <h3>Contact Us</h3>
+
+        <div class="contact-box">
+          <div class="icon">
+            <img src="assets/img/icons/footer-icon1.png" alt="">
+          </div>
+          <div class="pera">
+            <a href="tel:+880123456789">+880 123 456 789</a>
+          </div>
+        </div>
+
+        <div class="contact-box">
+          <div class="icon">
+            <img src="assets/img/icons/footer-icon2.png" alt="">
+          </div>
+          <div class="pera">
+            <a href="mailto:info@mail.com">info@mail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-box">
+          <div class="icon">
+            <img src="assets/img/icons/footer-icon3.png" alt="">
+          </div>
+          <div class="pera">
+            <a href="tel:+880123456789">8502 Preston Rd. <br> Inglewoo Maine 98380</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="contact-infos">
+        <h3>Our Location</h3>
+        <ul class="social-icon">
+          <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+          <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!--=====Mobile header end=======-->
+
+
+  <!--=====HERO AREA START =======-->
+
+  <div class="hero-area1">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="main-heading">
+            <span class="span" data-aos="fade-right" data-aos-duration="800">البيت العصري للمطابخ</span>
+            <h1 class="">تصاميم مبتكرة وجودة عالية لمطبخك العصري</h1>
+            <div class="space16"></div>
+            <p data-aos="fade-right" data-aos-duration="1000">
+              نوفر لك حلولاً عصرية ومخصصة في تصميم وتنفيذ المطابخ،<br> مع لمسة فنية تضمن لك الراحة والأناقة في آنٍ واحد.
+            </p>
+
+            <div class="space30"></div>
+            <div class="hero1-buttons" data-aos="fade-right" data-aos-duration="1200">
+              <a class="theme-btn1" href="gallery.html">تصفح التصاميم <span><i
+                    class="fa-solid fa-arrow-right"></i></span></a>
+              <a class="theme-btn2" href="contact.html">تواصل معنا <span><i
+                    class="fa-solid fa-arrow-right"></i></span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="hero1-images">
+            <div class="image1">
+              <img src="assets/img/bg/hero1-main-bg.png" alt="">
+            </div>
+            <div class="image2 overlay-anim" data-aos="zoom-in-up" data-aos-duration="700">
+              <img src="assets/img/hero/hero1-main-img.png" alt="">
+            </div>
+            <div class="image3 shape-animaiton2" data-aos="zoom-in-up" data-aos-duration="700">
+              <img src="assets/img/shapes/review-img.png" alt="">
+            </div>
+            <div class="image4 shape-animaiton3">
+              <img src="assets/img/shapes/hero1-shape.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--=====HERO AREA END=======-->
+
+  <!--=====HERO SLIDER AREA END=======-->
+
+  <div class="hero1-slider">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="logo-slider">
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo1.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo2.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo3.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo4.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo5.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo6.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo7.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo1.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo2.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo3.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo4.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo5.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo6.png" alt="">
+            </div>
+            <div class="single-slider">
+              <img src="assets/img/logo/slider-logo7.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--=====HERO SLIDER AREA END=======-->
+
+  <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+
+    <!--=====ABOUT AREA START=======-->
+
+    <div class="chosse1 sp" id="choose">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-2">
+            <div class="" data-aos="zoom-in-up" data-aos-duration="700">
+              <div class="icon-box">
+                <div class="icon">
+                  <img src="assets/img/icons/choose1-icon1.png" alt="">
+                </div>
+                <div class="heading1">
+                  <h3><span class="counter">98</span>%</h3>
+                  <div class="space10"></div>
+                  <p>رضا العملاء</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="" data-aos="zoom-in-up" data-aos-duration="900">
+              <div class="icon-box">
+                <div class="icon">
+                  <img src="assets/img/icons/choose1-icon2.png" alt="">
+                </div>
+                <div class="heading1">
+                  <h3><span class="counter">150</span>+</h3>
+                  <div class="space10"></div>
+                  <p>مشروع مكتمل</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="" data-aos="zoom-in-up" data-aos-duration="1200">
+              <div class="icon-box icon-box2">
+                <div class="icon">
+                  <img src="assets/img/icons/choose1-icon3.png" alt="">
+                </div>
+                <div class="heading1">
+                  <h3><span class="counter">12</span>+</h3>
+                  <div class="space10"></div>
+                  <p>سنة خبرة</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-lg-5">
+            <div class="image reveal overlay-anim">
+              <img src="assets/img/others/choose1-img.png" alt="">
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="heading1 choose1-heading">
+              <span class="span" data-aos="fade-left" data-aos-duration="700">لماذا تختارنا</span>
+              <h2 class="">تصاميم مبتكرة وجودة تفوق التوقعات</h2>
+              <div class="space16"></div>
+              <p data-aos="fade-left" data-aos-duration="900">
+                في البيت العصري للمطابخ، نتميز بتقديم حلول عصرية تناسب ذوقك واحتياجاتك، مع استخدام أفضل الخامات وأعلى
+                معايير الجودة.
+              </p>
+
+              <div class="space10"></div>
+              <div class="row" data-aos="fade-left" data-aos-duration="800">
+                <div class="col-lg-6">
+                  <ul class="icon-list">
+                    <li><span><i class="fa-solid fa-check"></i></span> تصاميم عصرية ومخصصة</li>
+                  </ul>
+                </div>
+                <div class="col-lg-6">
+                  <ul class="icon-list">
+                    <li><span><i class="fa-solid fa-check"></i></span> جودة عالية وخامات ممتازة</li>
+                  </ul>
+                </div>
+                <div class="col-lg-6">
+                  <ul class="icon-list">
+                    <li><span><i class="fa-solid fa-check"></i></span> فريق عمل محترف</li>
+                  </ul>
+                </div>
+                <div class="col-lg-6">
+                  <ul class="icon-list">
+                    <li><span><i class="fa-solid fa-check"></i></span> تسليم في الوقت المحدد</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="space30"></div>
+              <div class="" data-aos="fade-left" data-aos-duration="1100">
+                <a class="theme-btn1" href="about.html">من نحن <span><i class="fa-solid fa-arrow-right"></i></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--=====ABOUT AREA END=======-->
+
+    <!--=====SERVICE AREA START=======-->
+
+    <div class="service1 sp" id="service">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 m-auto text-center">
+            <div class="heading1-w">
+              <span class="span" data-aos="zoom-in-left" data-aos-duration="700">خدماتنا</span>
+              <h2 class="">حلول مخصصة لمطبخ أحلامك</h2>
+              <div class="space16"></div>
+              <p data-aos="fade-left" data-aos-duration="800">
+                في البيت العصري، نقدم خدمات احترافية لتصميم، تفصيل، وتركيب المطابخ بجودة عالية وتصاميم تناسب ذوقك
+                العصري.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="space30"></div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="service1-box" data-aos="zoom-in-up" data-aos-duration="700">
+              <div class="image overlay-anim">
+                <img src="assets/img/service/service1-img1.png" alt="">
+              </div>
+              <div class="hover-area">
+                <div class="icon">
+                  <img src="assets/img/icons/service1-icon1.png" alt="">
+                </div>
+                <div class="space16"></div>
+                <div class="heading1-w">
+                  <h4><a href="service-details.html">تصميم مطابخ عصرية</a></h4>
+                  <div class="space16"></div>
+                  <p>نقدم لك أحدث تصاميم المطابخ التي تجمع بين الجمال والعملية لتناسب احتياجات منزلك.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service1-box active" data-aos="zoom-in-up" data-aos-duration="900">
+              <div class="image overlay-anim">
+                <img src="assets/img/service/service1-img2.png" alt="">
+              </div>
+              <div class="hover-area">
+                <div class="icon">
+                  <img src="assets/img/icons/service1-icon2.png" alt="">
+                </div>
+                <div class="space16"></div>
+                <div class="heading1-w">
+                  <h4><a href="service-details.html">تفصيل مطابخ حسب الطلب</a></h4>
+                  <div class="space16"></div>
+                  <p>نقوم بتفصيل المطابخ حسب المقاسات والتصاميم التي تناسب ذوقك ومساحة منزلك.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="service1-box" data-aos="zoom-in-up" data-aos-duration="1100">
+              <div class="image overlay-anim">
+                <img src="assets/img/service/service1-img3.png" alt="">
+              </div>
+              <div class="hover-area">
+                <div class="icon">
+                  <img src="assets/img/icons/service1-icon3.png" alt="">
+                </div>
+                <div class="space16"></div>
+                <div class="heading1-w">
+                  <h4><a href="service-details.html">تركيب وصيانة المطابخ</a></h4>
+                  <div class="space16"></div>
+                  <p>نقدم خدمات تركيب احترافية وصيانة شاملة لضمان جودة وأداء مطبخك لسنوات طويلة.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="space50"></div>
+          <div class="col-lg-12">
+            <div class="text-center" data-aos="zoom-in-up" data-aos-duration="700">
+              <a class="theme-btn3" href="service.html">ابدأ الآن <span><i
+                    class="fa-solid fa-arrow-left"></i></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+      <!-- Our Works Section - Arabic -->
+      <section id="our-works" class="works-section">
+        <div class="container">
+          <div class="section-header">
+            <h2>أعمالنا</h2>
+            <p>نقدم لكم مجموعة من أفضل تصميمات المطابخ العصرية والكلاسيكية</p>
+          </div>
+      
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba" alt="مطبخ 1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4" alt="مطبخ 2" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858" alt="مطبخ 3" />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+    
+    <!--===== CTA AREA START =======-->
+
+    <div class="cta">
+      <div class="container">
+        <div class="row cta-border align-items-center">
+          <div class="col-lg-6">
+            <div class="heading1-w">
+              <h2>Ready to Power up your Savings and Reliability?</h2>
+              <div class="space16"></div>
+              <p>Feel free to customize this paragraph to better reflect the <br> specific services offered by your IT
+                solution & the unique </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="subscribe-area">
+              <form action="#">
+                <input type="email" placeholder="Email Address">
+                <div class="button">
+                  <button type="submit" class="theme-btn1">Subscribe Now <span><i
+                        class="fa-solid fa-arrow-right"></i></span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--===== CTA AREA START =======-->
+
+    <!--===== FOOTER AREA START =======-->
+
+    <div class="footer1 _relative">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="single-footer-items footer-logo-area">
+              <div class="footer-logo">
+                <a href=""><img src="assets/img/logo/footer-logo1.png" alt=""></a>
+              </div>
+              <div class="space20"></div>
+              <div class="heading1-w">
+                <p>Our goal is to demystify the process, address your concerns, and empower you with the knowledge to
+                  embark.</p>
+              </div>
+              <ul class="social-icon">
+                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg col-md-6 col-12">
+            <div class="single-footer-items">
+              <h3>Quick Links</h3>
+
+              <ul class="menu-list">
+                <li><a href="#">Staff Management</a></li>
+                <li><a href="#">Leadership Training</a></li>
+                <li><a href="#">Corporate Program </a></li>
+                <li><a href="#">Staffing Solutions</a></li>
+                <li><a href="#">Blog Standard</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg col-md-6 col-12">
+            <div class="single-footer-items pl-5">
+              <h3>Explore</h3>
+
+              <ul class="menu-list">
+                <li><a href="index.html">Home </a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="testimonial.html">Testimonial</a></li>
+                <li><a href="contact.html">Contact US</a></li>
+              </ul>
+            </div>
+          </div>
+
+
+          <div class="col-lg-3 col-md-6 col-12">
+            <div class="single-footer-items">
+              <h3>Contact Us</h3>
+
+              <div class="contact-box">
+                <div class="icon">
+                  <img src="assets/img/icons/footer-icon1.png" alt="">
+                </div>
+                <div class="pera">
+                  <a href="tel:+880123456789">+880 123 456 789</a>
+                </div>
+              </div>
+
+              <div class="contact-box">
+                <div class="icon">
+                  <img src="assets/img/icons/footer-icon2.png" alt="">
+                </div>
+                <div class="pera">
+                  <a href="mailto:info@mail.com">info@mail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-box">
+                <div class="icon">
+                  <img src="assets/img/icons/footer-icon3.png" alt="">
+                </div>
+                <div class="pera">
+                  <a href="tel:+880123456789">8502 Preston Rd. <br> Inglewoo Maine 98380</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="space70"></div>
+      </div>
+
+      <div class="copyright-area _relative">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-12">
+              <div class="coppyright">
+                <p>© Copyright 2024 -Recrute. All Right Reserved</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!--===== FOOTER AREA END =======-->
+
+
+
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/fontawesome.js"></script>
+    <script src="assets/js/mobile-menu.js"></script>
+    <script src="assets/js/jquery.magnific-popup.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/slick-slider.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="assets/js/jquery.countup.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/Splitetext.js"></script>
+    <script src="assets/js/SmoothScroll.js"></script>
+    <script src="assets/js/text-animation.js"></script>
+    <script src="assets/js/jquery.lineProgressbar.js"></script>
+    <script src="assets/js/tilt.jquery.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+ /**
+ * مكتبة سويبر لعرض صور المطابخ 
+ * Swiper.js wrapper for kitchen gallery
+ */
+
+// تهيئة السويبر عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', function() {
+  // إنشاء سويبر جديد
+  const swiper = new Swiper('.mySwiper', {
+    // الإعدادات الأساسية
+    direction: 'horizontal',
+    loop: true,
+    grabCursor: true,
+    speed: 800,
+    slidesPerView: 1,
+    
+    // التشغيل التلقائي
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true
+    },
+    
+    // أزرار التنقل (معطلة حسب طلب المستخدم للتصميم المطلوب)
+    /*
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    */
+    
+    // النقاط السفلية
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    
+    // الأحداث
+    on: {
+      init: function() {
+        console.log('تم تهيئة سويبر المطابخ بنجاح');
+      }
+    }
+  });
+  
+  // تعيين ألوان مخصصة
+  document.documentElement.style.setProperty('--swiper-theme-color', '#FF7A01');
+});
+
+    </script>
+    
+</body>
+
+</html>
