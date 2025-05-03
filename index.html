@@ -127,54 +127,45 @@
     margin-right: auto;
   }
 
-  /* Swiper Gallery */
-  .swiper {
-    width: 100%;
-    max-width: 900px;
-    height: 400px;
-    margin: 0 auto 60px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  }
+/* تخصيص الأزرار */
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+ /* background-color: black; */
+  color: black;
+  border-radius: 50%;
+  padding: 10px;
+  border: none;
+  /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); */
+  font-size: 18px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+/* تخصيص لون الأزرار عند المرور عليها */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  /* background-color: #388E3C; */
+  transform: translateY(-50%) scale(1.1); /* تكبير الأزرار عند المرور */
+}
 
-  .swiper-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+/* تخصيص مكان الأزرار */
+.swiper-button-next {
+  right: 20px;
+}
 
-  /* Navigation buttons */
-  .swiper-button-next,
-  .swiper-button-prev {
-    color: var(--primary-color);
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 10px;
-    border-radius: 50%;
-  }
+.swiper-button-prev {
+  left: 30px;
 
-  .swiper-button-next:hover,
-  .swiper-button-prev:hover {
-    background-color: var(--primary-color);
-    color: white;
-  }
+}
 
-  .swiper-pagination-bullet {
-    background-color: #ddd;
-    opacity: 1;
-    
-  }
+/* تخصيص وضع الأزرار خارج الصور */
+.swiper-container {
+  position: relative;
+}
 
-  .swiper-pagination-bullet-active {
-    background-color: #FF7A01;
-  }
 
   /* Call to Action */
   .call-to-action {
@@ -694,67 +685,34 @@
 
 
 
-      <!-- Our Works Section - Arabic -->
-      <section id="our-works" class="works-section">
-        <div class="container">
-          <div class="section-header">
-            <h2>أعمالنا</h2>
-            <p>نقدم لكم مجموعة من أفضل تصميمات المطابخ العصرية والكلاسيكية</p>
-          </div>
-      
-          <div class="swiper mySwiper" data-aos="zoom-in-left" data-aos-duration="800">
-            <div class="swiper-wrapper" style="height: 400px;">
-              <div class="swiper-slide">
-                <img src="assets/img/kitchen/IMG-20250501-WA0098.jpg" alt="مطبخ 1">
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/img/kitchen/IMG-20250501-WA0098.jpg" alt="مطبخ 2">
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/img/kitchen/IMG-20250501-WA0100.jpg" alt="مطبخ 3">
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/img/kitchen/IMG-20250501-WA0101.jpg" alt="مطبخ 4">
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/img/kitchen/IMG-20250501-WA0102.jpg" alt="مطبخ 5">
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/img/kitchen/IMG-20250501-WA0103.jpg" alt="مطبخ 6">
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/img/kitchen/IMG-20250501-WA0104.jpg" alt="مطبخ 7">
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/img/kitchen/IMG-20250501-WA0105.jpg" alt="مطبخ 8">
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/img/kitchen/IMG-20250501-WA0106.jpg" alt="مطبخ 9">
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/img/kitchen/IMG-20250501-WA0107.jpg" alt="مطبخ 10">
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/img/kitchen/IMG-20250501-WA0108.jpg" alt="مطبخ 11">
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/img/kitchen/IMG-20250501-WA0109.jpg" alt="مطبخ 12">
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/img/kitchen/IMG-20250501-WA0110.jpg" alt="مطبخ 13">
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/img/kitchen/IMG-20250501-WA0111.jpg" alt="مطبخ 14">
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/img/kitchen/IMG-20250501-WA0112.jpg" alt="مطبخ 15">
-              </div>
-            </div>
-            
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </section>
+ <!-- Our Works Section - Arabic -->
+<section id="our-works" class="works-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>أعمالنا</h2>
+      <p>نقدم لكم مجموعة من أفضل تصميمات المطابخ العصرية والكلاسيكية</p>
+    </div>
+
+    <div class="swiper mySwiper" data-aos="zoom-in-left" data-aos-duration="800">
+      <div class="swiper-wrapper" style="height: 400px;">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="assets/img/kitchen/IMG-20250501-WA0098.jpg" alt="مطبخ 1"></div>
+        <div class="swiper-slide"><img src="assets/img/kitchen/IMG-20250501-WA0098.jpg" alt="مطبخ 2"></div>
+        <div class="swiper-slide"><img src="assets/img/kitchen/IMG-20250501-WA0100.jpg" alt="مطبخ 3"></div>
+        <div class="swiper-slide"><img src="assets/img/kitchen/IMG-20250501-WA0100.jpg" alt="مطبخ 3"></div>
+        <div class="swiper-slide"><img src="assets/img/kitchen/IMG-20250501-WA0100.jpg" alt="مطبخ 3"></div>
+        <div class="swiper-slide"><img src="assets/img/kitchen/IMG-20250501-WA0100.jpg" alt="مطبخ 3"></div>
+        <div class="swiper-slide"><img src="assets/img/kitchen/IMG-20250501-WA0100.jpg" alt="مطبخ 3"></div>
+        <!-- باقي الصور -->
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</section>
+
     
     <!--===== CTA AREA START =======-->
 <!-- 
@@ -947,45 +905,16 @@
 // تهيئة السويبر عند تحميل الصفحة
 document.addEventListener('DOMContentLoaded', function() {
   // إنشاء سويبر جديد
-  const swiper = new Swiper('.mySwiper', {
-    // الإعدادات الأساسية
-    direction: 'horizontal',
-    loop: true,
-    grabCursor: true,
-    speed: 800,
-    slidesPerView: 1,
-    
-    // التشغيل التلقائي
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true
-    },
-    
-    // أزرار التنقل (معطلة حسب طلب المستخدم للتصميم المطلوب)
-    /*
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    */
-    
-    // النقاط السفلية
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    
-    // الأحداث
-    on: {
-      init: function() {
-        console.log('تم تهيئة سويبر المطابخ بنجاح');
-      }
-    }
-  });
-  
-  // تعيين ألوان مخصصة
-  document.documentElement.style.setProperty('--swiper-theme-color', '#FF7A01');
+  var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  loop: true,
+});
+
 });
 
 
