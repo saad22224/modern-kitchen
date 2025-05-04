@@ -325,7 +325,7 @@
 
               <div class="header2-buttons">
                 <div class="button">
-                  <a class="theme-btn1" href="contact.html"> تواصل معنا <span><i
+                  <a class="theme-btn1" target="_blank" href="http://wa.me/966543316001"> تواصل معنا <span><i
                         class="fa-solid fa-arrow-right"></i></span></a>
                 </div>
               </div>
@@ -730,6 +730,77 @@
           width: 100%;
         }
       }
+
+      .fixed-container {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .whatsapp-button {
+            width: 50px;
+            height: 50px;
+            background-color: #25D366; /* لون أخضر واتساب */
+            color: #FFFFFF; /* الأبيض المريح */
+            border-radius: 50%; /* زر دائري */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1); /* تكبير بسيط عند التمرير */
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* ظل أكبر */
+        }
+
+        .fixed-container span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    margin-right: 12px;
+    /* مسافة بين النص والزر */
+    color: #333;
+    background-color: #fff;
+    padding: 6px 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    display: none;
+    /* منع النص من الالتفاف */
+  }
+
+  .fixed-container:hover span{
+    display: inline-block;
+  }
+        @keyframes shake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-4px);
+            }
+            75% {
+                transform: translateX(4px);
+            }
+        }
+
+        .shake {
+            animation: shake 0.5s ease infinite;
+            animation-iteration-count: 1;
+        }
+
+        /* إعادة تشغيل الهزة كل 10 ثوانٍ */
+        @keyframes shakeInterval {
+            0% { animation: shake 0.5s ease 1; }
+            100% { animation: none; }
+        }
+
     </style>
    <div class="footer1 _relative" dir="rtl">
     <div class="container">
@@ -831,6 +902,12 @@
     </div>
   </div>
 
+  <div class="fixed-container">
+    <a href="http://wa.me/966543316001" target="_blank" class="whatsapp-button">
+      <i class="fa-brands fa-whatsapp" style="color: #fff;"></i>
+    </a>
+    <span class="whatsapp-text" >تواصل معنا </span>
+  </div>
 
 
     <!--===== FOOTER AREA END =======-->
@@ -905,6 +982,22 @@
         document.documentElement.style.setProperty('--swiper-theme-color', '#FF7A01');
       });
 
+
+
+
+      document.addEventListener('DOMContentLoaded', function () {
+          let fixedcontainer = document.querySelector('.fixed-container');
+          let whatsappButton = document.querySelector('.whatsapp-button');
+          // fixedcontainer.addEventListener('mouseover', function () {
+          //   whatsappButton.classList.add('shake');
+          // });
+          setInterval(function () {
+            whatsappButton.classList.add('shake');
+            setTimeout(function () {
+              whatsappButton.classList.remove('shake');
+            }, 500); // مدة الهزة
+          }, 5000); // كل 10 ثوانٍ
+        })
     </script>
 
 </body>
