@@ -305,7 +305,7 @@
             <div class="header-elements">
               <div class="site-logo">
                 <a href="index.html">
-                  <img style=" max-width: 100%; width: 200px;"
+                  <img style=" max-width: 100%; width: 200px; user-select: none;"
                     src="assets\img\logo\صورة واتساب بتاريخ 1446-11-06 في 11.30.55_291ce0ac_preview_rev_1.png" alt="">
                 </a>
               </div>
@@ -346,7 +346,7 @@
           <div class="mobile-logo">
             <a href="index.html"><img
                 src="assets\img\logo\صورة واتساب بتاريخ 1446-11-06 في 11.30.55_291ce0ac_preview_rev_1.png"
-                style="max-width: 100%; width: 100px;" alt=""></a>
+                style="max-width: 100%; width: 100px;  user-select: none;" alt=""></a>
           </div>
           <div class="mobile-nav-icon">
             <i class="fa-duotone fa-bars-staggered"></i>
@@ -359,7 +359,7 @@
     <div class="logo-m">
       <a href="index.html"><img
           src="assets\img\logo\صورة واتساب بتاريخ 1446-11-06 في 11.30.55_291ce0ac_preview_rev_1.png"
-          style="max-width: 100%; width: 100px; transform: translateX(-100%);" alt=""></a>
+          style="max-width: 100%; width: 100px; transform: translateX(-100%);  user-select: none;" alt=""></a>
     </div>
     <div class="menu-close">
       <i class="fa-solid fa-xmark"></i>
@@ -421,7 +421,6 @@
       </div>
     </div>
   </div>
-
 
   <!--=====Mobile header end=======-->
 
@@ -732,182 +731,196 @@
       }
 
       .fixed-container {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            display: flex;
-            align-items: center;
-            z-index: 1000;
+        position: fixed;
+        bottom: 100px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .whatsapp-button {
+        width: 50px;
+        height: 50px;
+        background-color: #25D366;
+        /* لون أخضر واتساب */
+        color: #FFFFFF;
+        /* الأبيض المريح */
+        border-radius: 50%;
+        /* زر دائري */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        font-size: 24px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .whatsapp-button:hover {
+        transform: scale(1.1);
+        /* تكبير بسيط عند التمرير */
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+        /* ظل أكبر */
+      }
+
+      .fixed-container span {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;
+        margin-right: 12px;
+        /* مسافة بين النص والزر */
+        color: #333;
+        background-color: #fff;
+        padding: 6px 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        white-space: nowrap;
+        display: none;
+        /* منع النص من الالتفاف */
+      }
+
+      .fixed-container:hover span {
+        display: inline-block;
+      }
+
+      @keyframes shake {
+
+        0%,
+        100% {
+          transform: translateX(0);
         }
 
-        .whatsapp-button {
-            width: 50px;
-            height: 50px;
-            background-color: #25D366; /* لون أخضر واتساب */
-            color: #FFFFFF; /* الأبيض المريح */
-            border-radius: 50%; /* زر دائري */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            font-size: 24px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        25% {
+          transform: translateX(-4px);
         }
 
-        .whatsapp-button:hover {
-            transform: scale(1.1); /* تكبير بسيط عند التمرير */
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* ظل أكبر */
+        75% {
+          transform: translateX(4px);
+        }
+      }
+
+      .shake {
+        animation: shake 0.5s ease infinite;
+        animation-iteration-count: 1;
+      }
+
+      /* إعادة تشغيل الهزة كل 10 ثوانٍ */
+      @keyframes shakeInterval {
+        0% {
+          animation: shake 0.5s ease 1;
         }
 
-        .fixed-container span {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    margin-right: 12px;
-    /* مسافة بين النص والزر */
-    color: #333;
-    background-color: #fff;
-    padding: 6px 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    white-space: nowrap;
-    display: none;
-    /* منع النص من الالتفاف */
-  }
-
-  .fixed-container:hover span{
-    display: inline-block;
-  }
-        @keyframes shake {
-            0%, 100% {
-                transform: translateX(0);
-            }
-            25% {
-                transform: translateX(-4px);
-            }
-            75% {
-                transform: translateX(4px);
-            }
+        100% {
+          animation: none;
         }
-
-        .shake {
-            animation: shake 0.5s ease infinite;
-            animation-iteration-count: 1;
-        }
-
-        /* إعادة تشغيل الهزة كل 10 ثوانٍ */
-        @keyframes shakeInterval {
-            0% { animation: shake 0.5s ease 1; }
-            100% { animation: none; }
-        }
-
+      }
     </style>
-   <div class="footer1 _relative" dir="rtl">
-    <div class="container">
-      <div class="row">
-        <!-- الشعار والوصف -->
-        <div class="col-lg-4 col-md-6 col-12">
-          <div class="single-footer-items footer-logo-area">
-            <div class="footer-logo">
-              <a href="#"><img style="max-width: 100%; width: 150px;"
-                  src="assets\img\logo\صورة واتساب بتاريخ 1446-11-06 في 11.30.55_291ce0ac_preview_rev_1.png"
-                  alt="شعار الموقع"></a>
-            </div>
-            <div class="space20"></div>
-            <div class="heading1-w">
-              <p>هدفنا هو تبسيط عملية التصميم وتوفير مطابخ عصرية بجودة عالية تناسب جميع الأذواق.</p>
-            </div>
-            <ul class="social-icon">
-              <ul class="social-icon">
-                <li><a href="http://wa.me/966543316001" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
-                <li><a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                <li><a target="_blank" href="https://www.tiktok.com/@moden.kitchen.house?_t=ZS-8vy93LVcElN&_r=1"><i
-                      class="fa-brands fa-tiktok"></i></a></li>
-                <li><a target="_blank"
-                    href="https://www.instagram.com/moden_kitchen_house/?igsh=NThvaHU2dWZpeWQ%3D&utm_source=qr#"><i
-                      class="fa-brands fa-instagram"></i></a></li>
-              </ul>
-
-            </ul>
-          </div>
-        </div>
-
-        <!-- روابط التصفح -->
-        <div class="col-lg col-md-6 col-12">
-          <div class="single-footer-items">
-            <h3>روابط مهمة</h3>
-            <ul class="menu-list">
-              <li><a href="index.html">الصفحة الرئيسية</a></li>
-              <li><a href="about.html">عنا</a></li>
-              <li><a href="project.html">أعمالنا</a></li>
-              <li><a href="contact.html">تواصل معنا</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- معلومات التواصل -->
-        <div class="col-lg-3  col-md-6 col-12 middle">
-          <div class="single-footer-items middle">
-            <h3>تواصل معنا</h3>
-
-            <div class="contact-box ">
-              <div class="icon">
-                <img src="assets/img/icons/footer-icon1.png" alt="">
-              </div>
-              <div class="pera">
-                <a href="tel:0543316001">0543316001</a>
-              </div>
-            </div>
-
-            <div class="contact-box">
-              <div class="icon">
-                <img src="assets/img/icons/footer-icon2.png" alt="">
-              </div>
-              <div class="pera">
-                <a href="mailto:modernhouse84@gmail.com">modernhouse84@gmail.com</a>
-              </div>
-            </div>
-
-            <div class="contact-box">
-              <div class="icon">
-                <img src="assets/img/icons/footer-icon3.png" alt="">
-              </div>
-              <div class="pera">
-                <p style="color: white; display: flex;">
-                  المدينة المنورة<br>
-                  شوران – حي السد<br>
-                  بجوار أسواق القرية
-                </p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="space70"></div>
-    </div>
-
-    <div class="copyright-area _relative">
+    <div class="footer1 _relative" dir="rtl">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-12">
-            <div class="coppyright">
-              <p>© جميع الحقوق محفوظة 2024 - البيت العصري للمطابخ</p>
+        <div class="row">
+          <!-- الشعار والوصف -->
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="single-footer-items footer-logo-area">
+              <div class="footer-logo">
+                <a href="#"><img style="max-width: 100%; width: 150px;"
+                    src="assets\img\logo\صورة واتساب بتاريخ 1446-11-06 في 11.30.55_291ce0ac_preview_rev_1.png"
+                    alt="شعار الموقع"></a>
+              </div>
+              <div class="space20"></div>
+              <div class="heading1-w">
+                <p>هدفنا هو تبسيط عملية التصميم وتوفير مطابخ عصرية بجودة عالية تناسب جميع الأذواق.</p>
+              </div>
+              <ul class="social-icon">
+                <ul class="social-icon">
+                  <li><a href="http://wa.me/966543316001" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
+                  <li><a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li><a target="_blank" href="https://www.tiktok.com/@moden.kitchen.house?_t=ZS-8vy93LVcElN&_r=1"><i
+                        class="fa-brands fa-tiktok"></i></a></li>
+                  <li><a target="_blank"
+                      href="https://www.instagram.com/moden_kitchen_house/?igsh=NThvaHU2dWZpeWQ%3D&utm_source=qr#"><i
+                        class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+
+              </ul>
+            </div>
+          </div>
+
+          <!-- روابط التصفح -->
+          <div class="col-lg col-md-6 col-12">
+            <div class="single-footer-items">
+              <h3>روابط مهمة</h3>
+              <ul class="menu-list">
+                <li><a href="index.html">الصفحة الرئيسية</a></li>
+                <li><a href="about.html">عنا</a></li>
+                <li><a href="project.html">أعمالنا</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- معلومات التواصل -->
+          <div class="col-lg-3  col-md-6 col-12 middle">
+            <div class="single-footer-items middle">
+              <h3>تواصل معنا</h3>
+
+              <div class="contact-box ">
+                <div class="icon">
+                  <img src="assets/img/icons/footer-icon1.png" alt="">
+                </div>
+                <div class="pera">
+                  <a href="tel:0543316001">0543316001</a>
+                </div>
+              </div>
+
+              <div class="contact-box">
+                <div class="icon">
+                  <img src="assets/img/icons/footer-icon2.png" alt="">
+                </div>
+                <div class="pera">
+                  <a href="mailto:modernhouse84@gmail.com">modernhouse84@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-box">
+                <div class="icon">
+                  <img src="assets/img/icons/footer-icon3.png" alt="">
+                </div>
+                <div class="pera">
+                  <p style="color: white; display: flex;">
+                    المدينة المنورة<br>
+                    شوران – حي السد<br>
+                    بجوار أسواق القرية
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="space70"></div>
+      </div>
+
+      <div class="copyright-area _relative">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-12">
+              <div class="coppyright">
+                <p>© جميع الحقوق محفوظة 2024 - البيت العصري للمطابخ</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="fixed-container">
-    <a href="http://wa.me/966543316001" target="_blank" class="whatsapp-button">
-      <i class="fa-brands fa-whatsapp" style="color: #fff;"></i>
-    </a>
-    <span class="whatsapp-text" >تواصل معنا </span>
-  </div>
+    <div class="fixed-container">
+      <a href="http://wa.me/966543316001" target="_blank" class="whatsapp-button">
+        <i class="fa-brands fa-whatsapp" style="color: #fff;"></i>
+      </a>
+      <span class="whatsapp-text">تواصل معنا </span>
+    </div>
 
 
     <!--===== FOOTER AREA END =======-->
@@ -986,18 +999,18 @@
 
 
       document.addEventListener('DOMContentLoaded', function () {
-          let fixedcontainer = document.querySelector('.fixed-container');
-          let whatsappButton = document.querySelector('.whatsapp-button');
-          // fixedcontainer.addEventListener('mouseover', function () {
-          //   whatsappButton.classList.add('shake');
-          // });
-          setInterval(function () {
-            whatsappButton.classList.add('shake');
-            setTimeout(function () {
-              whatsappButton.classList.remove('shake');
-            }, 500); // مدة الهزة
-          }, 5000); // كل 10 ثوانٍ
-        })
+        let fixedcontainer = document.querySelector('.fixed-container');
+        let whatsappButton = document.querySelector('.whatsapp-button');
+        // fixedcontainer.addEventListener('mouseover', function () {
+        //   whatsappButton.classList.add('shake');
+        // });
+        setInterval(function () {
+          whatsappButton.classList.add('shake');
+          setTimeout(function () {
+            whatsappButton.classList.remove('shake');
+          }, 500); // مدة الهزة
+        }, 5000); // كل 10 ثوانٍ
+      })
     </script>
 
 </body>
