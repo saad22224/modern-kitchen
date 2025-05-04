@@ -289,7 +289,7 @@
     /* منع النص من الالتفاف */
   }
 
-  .fixed-container:hover span{
+  .fixed-container:hover span {
     display: inline-block;
   }
 
@@ -324,10 +324,10 @@
       animation: none;
     }
   }
-  .fixed-container:hover .whatsapp-text {
-  display: block;
-}
 
+  .fixed-container:hover .whatsapp-text {
+    display: block;
+  }
 </style>
 
 <body class="body" dir="rtl">
@@ -795,99 +795,99 @@
       <a href="http://wa.me/966543316001" target="_blank" class="whatsapp-button">
         <i class="fa-brands fa-whatsapp" style="color: #fff;"></i>
       </a>
-      <span class="whatsapp-text" >تواصل معنا </span>
+      <span class="whatsapp-text">تواصل معنا </span>
     </div>
 
-      <!--===== FOOTER AREA END =======-->
+    <!--===== FOOTER AREA END =======-->
 
 
 
-      <script src="assets/js/bootstrap.min.js"></script>
-      <script src="assets/js/aos.js"></script>
-      <script src="assets/js/fontawesome.js"></script>
-      <script src="assets/js/mobile-menu.js"></script>
-      <script src="assets/js/jquery.magnific-popup.js"></script>
-      <script src="assets/js/owl.carousel.min.js"></script>
-      <script src="assets/js/slick-slider.js"></script>
-      <script src="assets/js/gsap.min.js"></script>
-      <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-      <script src="assets/js/jquery.countup.js"></script>
-      <script src="assets/js/ScrollTrigger.min.js"></script>
-      <script src="assets/js/Splitetext.js"></script>
-      <script src="assets/js/SmoothScroll.js"></script>
-      <script src="assets/js/text-animation.js"></script>
-      <script src="assets/js/jquery.lineProgressbar.js"></script>
-      <script src="assets/js/tilt.jquery.js"></script>
-      <script src="assets/js/main.js"></script>
-      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-      <script>
-        /**
-        * مكتبة سويبر لعرض صور المطابخ 
-        * Swiper.js wrapper for kitchen gallery
-        */
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/fontawesome.js"></script>
+    <script src="assets/js/mobile-menu.js"></script>
+    <script src="assets/js/jquery.magnific-popup.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/slick-slider.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script src="assets/js/jquery.countup.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/Splitetext.js"></script>
+    <script src="assets/js/SmoothScroll.js"></script>
+    <script src="assets/js/text-animation.js"></script>
+    <script src="assets/js/jquery.lineProgressbar.js"></script>
+    <script src="assets/js/tilt.jquery.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      /**
+      * مكتبة سويبر لعرض صور المطابخ 
+      * Swiper.js wrapper for kitchen gallery
+      */
 
-        // تهيئة السويبر عند تحميل الصفحة
-        document.addEventListener('DOMContentLoaded', function () {
-          // إنشاء سويبر جديد
-          const swiper = new Swiper('.mySwiper', {
-            // الإعدادات الأساسية
-            direction: 'horizontal',
-            loop: true,
-            grabCursor: true,
-            speed: 800,
-            slidesPerView: 1,
+      // تهيئة السويبر عند تحميل الصفحة
+      document.addEventListener('DOMContentLoaded', function () {
+        // إنشاء سويبر جديد
+        const swiper = new Swiper('.mySwiper', {
+          // الإعدادات الأساسية
+          direction: 'horizontal',
+          loop: true,
+          grabCursor: true,
+          speed: 800,
+          slidesPerView: 1,
 
-            // التشغيل التلقائي
-            autoplay: {
-              delay: 2500,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true
-            },
+          // التشغيل التلقائي
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+          },
 
-            // أزرار التنقل (معطلة حسب طلب المستخدم للتصميم المطلوب)
-            /*
-            navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            },
-            */
+          // أزرار التنقل (معطلة حسب طلب المستخدم للتصميم المطلوب)
+          /*
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          */
 
-            // النقاط السفلية
-            pagination: {
-              el: '.swiper-pagination',
-              clickable: true,
-            },
+          // النقاط السفلية
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
 
-            // الأحداث
-            on: {
-              init: function () {
-                console.log('تم تهيئة سويبر المطابخ بنجاح');
-              }
+          // الأحداث
+          on: {
+            init: function () {
+              console.log('تم تهيئة سويبر المطابخ بنجاح');
             }
-          });
-
-          // تعيين ألوان مخصصة
-          document.documentElement.style.setProperty('--swiper-theme-color', '#FF7A01');
+          }
         });
 
+        // تعيين ألوان مخصصة
+        document.documentElement.style.setProperty('--swiper-theme-color', '#FF7A01');
+      });
 
 
 
 
-        document.addEventListener('DOMContentLoaded', function () {
-          let fixedcontainer = document.querySelector('.fixed-container');
-          let whatsappButton = document.querySelector('.whatsapp-button');
-          // fixedcontainer.addEventListener('mouseover', function () {
-          //   whatsappButton.classList.add('shake');
-          // });
-          setInterval(function () {
-            whatsappButton.classList.add('shake');
-            setTimeout(function () {
-              whatsappButton.classList.remove('shake');
-            }, 500); // مدة الهزة
-          }, 5000); // كل 10 ثوانٍ
-        })
-      </script>
+
+      document.addEventListener('DOMContentLoaded', function () {
+        let fixedcontainer = document.querySelector('.fixed-container');
+        let whatsappButton = document.querySelector('.whatsapp-button');
+        // fixedcontainer.addEventListener('mouseover', function () {
+        //   whatsappButton.classList.add('shake');
+        // });
+        setInterval(function () {
+          whatsappButton.classList.add('shake');
+          setTimeout(function () {
+            whatsappButton.classList.remove('shake');
+          }, 500); // مدة الهزة
+        }, 5000); // كل 10 ثوانٍ
+      })
+    </script>
 
 </body>
 
