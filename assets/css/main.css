@@ -4769,6 +4769,49 @@ body.body {
   transition: all 0.4s;
 }
 
+
+@media(max-width:767px){
+  .service1-box::after {
+    opacity: 1;
+    transition: all 0.4s;
+    bottom: -350px;
+  }
+  .service1-box .image img {
+    transition: all 0.4s;
+    transform: scale(1.1) rotate(2deg);
+  }
+  .service1-box .hover-area {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.4s;
+  }
+  
+  .service1-box .hover-area {
+    position: absolute;
+    bottom: 0;
+    margin: 24px;
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.4s;
+    z-index: 2;
+  }
+  .service1-box .hover-area p {
+    color: rgba(255, 255, 255, 0.7882352941);
+  }
+  .service1-box::after {
+    content: "";
+    position: absolute;
+    bottom: -350px;
+    right: -30px;
+    height: 600px;
+    width: 600px;
+    background-color: var(--vtc-bg-main-bg-1);
+    border-radius: 50%;
+    opacity: 1;
+    transition: all 0.4s;
+  }
+}
+
 .service2-box {
   margin-top: 60px;
   padding: 70px 32px 32px 32px;
