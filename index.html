@@ -319,9 +319,25 @@
   }
 
 
-  /* .fixed-container:hover .whatsapp-text {
-    display: block;
-  } */
+  .show-more-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(217, 164, 91, 0.3);
+  }
+
+  .show-more-btn:hover {
+    background-color: #c48d40;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(217, 164, 91, 0.4);
+  }
 </style>
 
 <body class="body" dir="rtl">
@@ -518,7 +534,8 @@
               <img src="assets/img/kitchen/IMG-20250501-WA0098.jpg" alt="">
             </div> -->
             <div class="image3 shape-animaiton2" data-aos="zoom-in-up" data-aos-duration="700">
-              <img src="assets/img/kitchen/IMG-20250501-WA0098.jpg" style="max-width: 100%; width: 380px; user-select: none;" alt="">
+              <img src="assets/img/kitchen/IMG-20250501-WA0098.jpg"
+                style="max-width: 100%; width: 380px; user-select: none;" alt="">
             </div>
             <!-- <div class="image4 shape-animaiton3">
               <img src="assets/img/shapes/hero1-shape.png" alt="">
@@ -638,13 +655,50 @@
 
           </div>
           <div class="col-lg-5">
-            <div class="image reveal overlay-anim">
-              <video id="player" playsinline controls data-poster="/path/to/poster.jpg">
-                <source src="assets\video\فيديو واتساب بتاريخ 1446-11-03 في 22.00.33_5b901a57.mp4" type="video/mp4" />
-
-              </video>
+            <!-- Swiper Slider -->
+            <div class="swiper mySwiperVideo">
+              <div class="swiper-wrapper">
+          
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                  <video class="plyr-video" playsinline controls data-poster="assets/img/poster1.jpg">
+                    <source src="assets/video/first.mp4" type="video/mp4" />
+                  </video>
+                </div>
+          
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                  <video class="plyr-video" playsinline controls data-poster="assets/img/poster2.jpg">
+                    <source src="assets/video/second.mp4" type="video/mp4" />
+                  </video>
+                </div>
+          
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                  <video class="plyr-video" playsinline controls data-poster="assets/img/poster3.jpg">
+                    <source src="assets/video/third.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="swiper-slide">
+                  <video class="plyr-video" playsinline controls data-poster="assets/img/poster3.jpg">
+                    <source src="assets/video/fourth.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div class="swiper-slide">
+                  <video class="plyr-video" playsinline controls data-poster="assets/img/poster3.jpg">
+                    <source src="assets/video/fifth.mp4" type="video/mp4" />
+                  </video>
+                </div>
+          
+              </div>
+          
+              <!-- Swiper navigation (اختياري) -->
+              <!-- <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div> -->
+              <div class="swiper-pagination"></div>
             </div>
           </div>
+          
           <div class="col-lg-5">
             <div class="heading1 choose1-heading">
               <span class="span" data-aos="fade-left" data-aos-duration="700">لماذا تختارنا</span>
@@ -808,38 +862,15 @@
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
         </div>
+        <!-- Show More Button - Added as requested -->
+        <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="200">
+          <a href="project.html" class="show-more-btn">عرض المزيد <i class="fas fa-arrow-left"></i></a>
+        </div>
       </div>
     </section>
 
 
-    <!--===== CTA AREA START =======-->
-    <!-- 
-    <div class="cta">
-      <div class="container">
-        <div class="row cta-border align-items-center">
-          <div class="col-lg-6">
-            <div class="heading1-w">
-              <h2>Ready to Power up your Savings and Reliability?</h2>
-              <div class="space16"></div>
-              <p>Feel free to customize this paragraph to better reflect the <br> specific services offered by your IT
-                solution & the unique </p>
-            </div>
-          </div>
 
-          <div class="col-lg-6">
-            <div class="subscribe-area">
-              <form action="#">
-                <input type="email" placeholder="Email Address">
-                <div class="button">
-                  <button type="submit" class="theme-btn1">Subscribe Now <span><i
-                        class="fa-solid fa-arrow-right"></i></span></button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
 
     <!--===== CTA AREA START =======-->
 
@@ -1060,8 +1091,23 @@
         }, 5000); // كل 10 ثوانٍ
       })
 
-      const player = new Plyr('#player');
+      var videoswiper = new Swiper(".mySwiperVideo", {
+    loop: true,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
 
+  // Plyr init
+  document.querySelectorAll('.plyr-video').forEach(video => {
+    new Plyr(video);
+  });
 
     </script>
 
