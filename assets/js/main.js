@@ -601,7 +601,7 @@
     $(window).on("load", function (event) {
       setTimeout(function () {
         $(".preloader").fadeToggle();
-      }, 500);
+      }, 100);
     });
 
 
